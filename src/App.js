@@ -1,7 +1,8 @@
 import React from "react";
 import { getAuth, signInWithPopup, OAuthProvider } from "firebase/auth";
+import { app } from "./config";
 function App() {
-  const auth = getAuth();
+  const auth = getAuth(app)
   const provider = new OAuthProvider("apple.com");
   const handleSignInWithApple = () => {
     signInWithPopup(auth, provider)
